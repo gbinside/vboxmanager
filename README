@@ -1,4 +1,4 @@
-A simple bottle web application to sotp/start/savestate the virtualbox virtual machines on a remote server
+A simple bottle web application to stop/start/savestate the virtualbox virtual machines on a remote server
 
 ---
 
