@@ -2,7 +2,7 @@ A simple bottle web application to stop/start/savestate the virtualbox virtual m
 
 ---
 
-Copyright (C) 2011 Roberto Gambuzzi
+Copyright (C) 2012 Roberto Gambuzzi
 
 Those programs are free software: you can redistribute theme and/or modify
 theme under the terms of the GNU General Public License as published by
