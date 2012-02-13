@@ -49,7 +49,7 @@ def index():
         if '%(name)s' in machineStatus:
             machineStatus = machineStatus % {'name':machineName}
         ret.append ( "<li><a href=\"/sshot/%s\"><img src=\"/sshot/%s/200/150\" /></a> " % (machineName,machineName) +machineName + " - " + machineStatus+" - "+str(machine.memorySize)+"mem - " +str(machine.CPUCount)+"cpus </li>")
-    return '<meta http-equiv="refresh" content="5"><ul>%s</ul>' % (''.join(ret))
+    return '<ul>%s</ul>' % (''.join(ret))
 
 @route('/start/:name')
 def start(name=None):
