@@ -57,7 +57,8 @@ def start(name=None):
         machine = virtualBox.findMachine(name)
         session = virtualBoxManager.mgr.getSessionObject(virtualBox)
         prog = machine.launchVMProcess(session,"headless","")
-        prog.waitForCompletion(5000)
+        if prog:        
+            prog.waitForCompletion(5000)
     redirect('/')
 
 @route('/savestate/:name')
@@ -67,7 +68,8 @@ def savestate(name=None):
         session = virtualBoxManager.mgr.getSessionObject(virtualBox)
         machine.lockMachine(session, 1)
         prog = session.console.saveState()
-        prog.waitForCompletion(5000)
+        if prog:
+            prog.waitForCompletion(5000)
         session.unlockMachine()
     redirect('/')
 
@@ -78,7 +80,8 @@ def stop(name=None):
         session = virtualBoxManager.mgr.getSessionObject(virtualBox)
         machine.lockMachine(session, 1)
         prog = session.console.powerButton()
-        prog.waitForCompletion(5000)
+        if prog:
+            prog.waitForCompletion(5000)
         session.unlockMachine()
     redirect('/')
 
@@ -86,15 +89,18 @@ def stop(name=None):
 @route('/sshot/:name/:x/:y')
 def screen_shot(name=None,x=800,y=600):
     response.content_type = "image/png"
-    img = ''
+    img = 'base64,'
     if name:
         machine = virtualBox.findMachine(name)
         session = virtualBoxManager.mgr.getSessionObject(virtualBox)
         machine.lockMachine(session, 1)
-        display = session.console.display 
-        img = display.takeScreenShotPNGToArray(0,x,y)
+        try:
+            display = session.console.display 
+            img = display.takeScreenShotPNGToArray(0,x,y)
         #img = '<img alt="Embedded Image" src="data:image/png;base64,' + \
         #       img.encode('base64') + '" />'
+        except:
+            pass
         session.unlockMachine()
     return img
 
