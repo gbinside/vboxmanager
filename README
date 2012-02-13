@@ -1,0 +1,17 @@
+A simple bottle web application to sotp/start/savestate the virtualbox virtual machines on a remote server
+
+---
+
+Copyright (C) 2011 Roberto Gambuzzi
+
+Those programs are free software: you can redistribute theme and/or modify
+theme under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License.
+
+Those programs are distributed in the hope that someone of theme will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with those programs.  If not, see <http://www.gnu.org/licenses/>.
